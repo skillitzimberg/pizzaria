@@ -84,18 +84,20 @@ function DisplayOrderDetails(customerDetails, completeOrder) {
   };
 
   htmlToDisplay += "<p>$" + completeOrder[1] + "</p>";
-
-  console.log(customerDetails);
-  console.log(completeOrder);
-  console.log(htmlToDisplay);
   return htmlToDisplay;
 }
 
 $(document).ready(function() {
-  $("form#test").submit(function(event) {
+  $("form#order").submit(function(event) {
     event.preventDefault();
-
-
-
+    var pizzaToppings = [];
+    $("input:checkbox[name=toppings]:checked").each(function(){
+      pizzaToppings.push($(this).val());
+    });
+    var size = $("#size").val();
+    var orderDetails = [];
+    orderDetails.push(pizzaToppings);
+    orderDetails.push(size);
+    console.log(orderDetails);
   })
 })

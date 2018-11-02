@@ -87,3 +87,10 @@ return htmlToDisplay;
     }
   })
 completeOrder[0].toppings.forEach(function(city)
+
+
+
+
+var orderDetails = [];
+orderDetails.push(pizzaToppings);
+console.log(orderDetails);
