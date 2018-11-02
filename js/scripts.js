@@ -1,4 +1,9 @@
 // BUSINESS LOGIC
+
+function Pizzaria() {
+
+}
+
 function Pizza(toppings, size) {
   this.toppings = toppings,
   this.size = size
@@ -22,11 +27,24 @@ Menu.prototype.findTopping = function(topping) {
   return false;
 }
 
+Menu.prototype.getPizzaPrice = function(orderDetails) {
+  for (var = i; i < orderDetails.length; i++) {
+    for (var = topping; topping < orderDetails[i].length; topping++) {
+      menu.findTopping(orderDetails[i]);
+    }
+  }
+}
+
+Menu.prototype.orderPizza = function(orderDetails) {
+  var hotPizza = new Pizza(orderDetails[0], orderDetails[1]);
+}
+
 function Topping(type, name, pricing) {
 this.type = type,
   this.name = name,
   this.pricing = pricing
 }
+
 
 var menu = new Menu();
 
@@ -47,16 +65,9 @@ menu.addTopping(blackOlives);
 menu.addTopping(canadianBacon);
 menu.addTopping(greenPepper);
 
-var pepperoniPizza = new Pizza([menu.toppings[0].name, menu.toppings[1].name, menu.toppings[2].name], menu.pricePerSize[1]);
-
-
-
 
 // USER INTERFACE LOGIC
 
-// function CounterService() {
-//
-// }
 //
 // CounterService.prototype.placeOrder = function() {
 //   var pizzaOrder = new Pizza(["tomato sauce", "mozzarella", "pepperoni"], 14);

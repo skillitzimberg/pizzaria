@@ -60,3 +60,4 @@ ENTITIES:
 
 
 menu.toppings[0].name
+menu.findTopping(pineapple).name
