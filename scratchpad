@@ -1,0 +1,59 @@
+pizza has:
+toppings:
+  - sauce
+  - cheese
+  - veg
+  - meat
+size:
+  - 14"
+  - 18"
+  - 22"
+
+menu has:
+  options
+  --toppings:
+      - sauce
+      - cheese
+      - veg
+      - meat
+  --size:
+      - 14"
+      - 18"
+      - 22"
+
+  prices
+  --toppings:
+      - sauce: $
+      - cheese: $
+      - veg: $$
+      - meat: $$$
+  --size:
+      - 14": $
+      - 18": $$
+      - 22": $$$
+
+customer
+  - places orders
+
+customer service
+  - takes orders
+  - uses register
+  - tells prices
+
+register
+  - calculates prices
+
+  toppings have:
+    - type
+    - name
+    - price
+  size has:
+    - dimension
+    - price
+
+ENTITIES:
+  menu: contains size & toppings option and prices
+  pizza: is given toppings & size
+  register: calculates prices
+  server: uses register
+  customer: gives order
