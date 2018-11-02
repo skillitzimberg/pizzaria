@@ -15,13 +15,16 @@ A pizzaria online order webpage where users can order a pizza of any size and to
 - [x] ** Expect: ** console.log(menu) to return Menu {toppings: Array(1), sizeInInches: Array(3)};
 
 ##### Spec 3: Make a new pizza passing in [menu.toppings[0].name, menu.toppings[1].name, menu.toppings[2].name], menu.sizeInInches[1]:
-- [x] ** Expect: ** console.log(menu) to return Pizza {toppings: Array(3), size: 18};
+- [x] ** Expect: ** console.log(menu) to return Pizza {toppings: Array(3), size: medium};
 
 ##### Spec 4: Make prototype Menu.findTopping:
 - [x] ** Expect: ** menu.findTopping(pepperoni) to return pepperoni;
 
 ##### Spec 5: Make orderPizza method:
 - [x] ** Expect: ** Where var orderDetails = [["tomato sauce", "mozzarella", "pepperoni"], 14], menu.orderPizza(orderDetails) returns Pizza {toppings: Array(3), size: 14};
+
+##### Spec 6: Make getPrice method:
+- [x] ** Expect: ** Where var orderDetails = [["tomato sauce", "mozzarella", "pepperoni"], "medium"], menu.getPrice(orderDetails) returns orderTotal 19;
 
 ## Objectives
 

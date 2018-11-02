@@ -11,7 +11,7 @@ function Pizza(toppings, size) {
 
 function Menu() {
   this.toppings = [],
-  this.pricePerSize = [[10, 14], [12, 18], [14, 22]]
+  this.basePricePerSize = [["small", 10], ["medium", 12], ["large", 16]]
 }
 
 Menu.prototype.addTopping = function(topping) {
@@ -27,22 +27,23 @@ Menu.prototype.findTopping = function(topping) {
   return false;
 }
 
+function Topping(type, name, pricing) {
+  this.type = type,
+  this.name = name,
+  this.pricing = pricing
+}
+
 Menu.prototype.getPizzaPrice = function(orderDetails) {
-  for (var = i; i < orderDetails.length; i++) {
-    for (var = topping; topping < orderDetails[i].length; topping++) {
-      menu.findTopping(orderDetails[i]);
+    for (var i = 0; i < this.basePricePerSize.length; i++) {
+      if (this.basePricePerSize[i][0] === orderDetails[1]) {
+        var sizeBasePrice = this.basePricePerSize[i][1];
+      }
     }
-  }
+  return orderTotal = orderDetails[0].length + sizeBasePrice;
 }
 
 Menu.prototype.orderPizza = function(orderDetails) {
-  var hotPizza = new Pizza(orderDetails[0], orderDetails[1]);
-}
-
-function Topping(type, name, pricing) {
-this.type = type,
-  this.name = name,
-  this.pricing = pricing
+  return hotPizza = new Pizza(orderDetails[0], orderDetails[1]);
 }
 
 

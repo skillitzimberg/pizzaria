@@ -61,3 +61,8 @@ ENTITIES:
 
 menu.toppings[0].name
 menu.findTopping(pineapple).name
+
+pepperoni.pricing
+
+var orderDetails = [["tomato sauce", "mozzarella", "pepperoni"], "medium"];
+menu.getPizzaPrice(orderDetails);
