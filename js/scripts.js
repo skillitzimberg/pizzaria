@@ -1,9 +1,4 @@
 // BUSINESS LOGIC
-
-function Pizzaria() {
-
-}
-
 function Pizza(toppings, size) {
   this.toppings = toppings,
   this.size = size
@@ -46,7 +41,7 @@ Menu.prototype.orderPizza = function(orderDetails) {
   var hotPizza = new Pizza(orderDetails[0], orderDetails[1]);
   var orderTotal = this.getPizzaPrice(orderDetails);
 
-  return [hotPizza, orderTotal]
+  return [hotPizza, orderTotal];
 }
 
 var menu = new Menu();
@@ -70,34 +65,31 @@ menu.addTopping(greenPepper);
 
 
 // USER INTERFACE LOGIC
-function customerDetails(firstName, lastName, phoneNumber) {
+function CustomerDetails(firstName, lastName, phoneNumber) {
   this.firstName = firstName,
-  this.laststName = lastName,
+  this.lastName = lastName,
   this.phoneNumber = phoneNumber
 }
 
-customerDetails.prototype.addCustomer = function(firstName, lastName, phoneNumber) {
-
+CustomerDetails.prototype.addCustomer = function(firstName, lastName, phoneNumber) {
   return [firstName, lastName, phoneNumber];
 }
 
-var customer = new customerDetails("Scott", "Bergler", "456235902935");
+function DisplayOrderDetails(customerDetails, completeOrder) {
+  var htmlToDisplay = "<p>" + customerDetails.firstName + " " + customerDetails.lastName + "</p>" + "<p>" + customerDetails.phoneNumber + "</p>";
 
-function DisplayOrderDetails(customerDetails, orderDetails) {
-  var htmlToDisplay = "";
+  for (var i = 0; i < completeOrder[0].toppings.length; i++) {
+    htmlToDisplay += "<p>" + completeOrder[0].toppings[i] + "</p>";
+    console.log(completeOrder[0].toppings[i]);
+  };
 
-  customerDetails.forEach(function(detail) {
-    htmlToDisplay += "<p>" + detail + "</p>";
-  })
+  htmlToDisplay += "<p>$" + completeOrder[1] + "</p>";
 
-  orderDetails.forEach(function(detail) {
-    htmlToDisplay += "<p>" + detail + "</p>";
-  })
-
+  console.log(customerDetails);
+  console.log(completeOrder);
+  console.log(htmlToDisplay);
   return htmlToDisplay;
 }
-
-var completeOrder = new DisplayOrderDetails();
 
 $(document).ready(function() {
   $("form#test").submit(function(event) {

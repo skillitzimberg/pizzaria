@@ -65,4 +65,25 @@ menu.findTopping(pineapple).name
 pepperoni.pricing
 
 var orderDetails = [["tomato sauce", "mozzarella", "pepperoni"], "medium"];
-menu.getPizzaPrice(orderDetails);
+var completeOrder = menu.orderPizza(orderDetails);
+var customer = new CustomerDetails("Scott", "Bergler", "456235902935");
+var order = new DisplayOrderDetails(customer, completeOrder);
+
+
+
+var htmlToDisplay = "<p>" + customerDetails.firstName + " " +  customerDetails.lastName + "</p>" + "<p>" + customerDetails.phoneNumber + "</p>";
+
+orderDetails.forEach(function(detail) {
+  htmlToDisplay += "<p>" + detail + "</p>";
+})
+
+return htmlToDisplay;
+
+
+
+  completeOrder.forEach(function(element) {
+    for (var i = 0; i < completeOrder[0].length; i++) {
+    htmlToDisplay += "<p>" + completeOrder[i] + "</p>"
+    }
+  })
+completeOrder[0].toppings.forEach(function(city)

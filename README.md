@@ -32,6 +32,18 @@ A pizzaria online order webpage where users can order a pizza of any size and to
 ##### Spec 7: Get customer details:
 - [x] ** Expect: ** customerDetails("Scott", "Bergler", "some.phone.number"]) === ["Scott", "Bergler", "some.phone.number"];
 
+##### Spec 8: Console.log customer details, pizza ordered and price:
+- [x] ** Expect: ** console.log(customerDetails);
+console.log(completeOrder);
+to return:
+{firstName: "Scott", lastName: "Bergler", phoneNumber: "456235902935"};
+[Pizza, 15]
+
+##### Spec 9: console.log pizza toppings:
+- [x] ** Expect: ** var order = new DisplayOrderDetails(customer, completeOrder) to console.log "tomato sauce", "mozzarella", "pepperoni";
+
+##### Spec 10: Format pizza toppings with customer details and price:
+- [x] ** Expect: ** var order = new DisplayOrderDetails(customer, completeOrder) to console.log <p>Scott Bergler</p><p>456235902935</p><p>tomato sauce</p><p>mozzarella</p><p>pepperoni</p><p>$15</p>;
 
 ## Objectives
 
