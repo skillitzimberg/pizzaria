@@ -43,9 +43,11 @@ Menu.prototype.getPizzaPrice = function(orderDetails) {
 }
 
 Menu.prototype.orderPizza = function(orderDetails) {
-  return hotPizza = new Pizza(orderDetails[0], orderDetails[1]);
-}
+  var hotPizza = new Pizza(orderDetails[0], orderDetails[1]);
+  var orderTotal = this.getPizzaPrice(orderDetails);
 
+  return [hotPizza, orderTotal]
+}
 
 var menu = new Menu();
 
@@ -68,15 +70,40 @@ menu.addTopping(greenPepper);
 
 
 // USER INTERFACE LOGIC
+function customerDetails(firstName, lastName, phoneNumber) {
+  this.firstName = firstName,
+  this.laststName = lastName,
+  this.phoneNumber = phoneNumber
+}
 
-//
-// CounterService.prototype.placeOrder = function() {
-//   var pizzaOrder = new Pizza(["tomato sauce", "mozzarella", "pepperoni"], 14);
-// }
+customerDetails.prototype.addCustomer = function(firstName, lastName, phoneNumber) {
+
+  return [firstName, lastName, phoneNumber];
+}
+
+var customer = new customerDetails("Scott", "Bergler", "456235902935");
+
+function DisplayOrderDetails(customerDetails, orderDetails) {
+  var htmlToDisplay = "";
+
+  customerDetails.forEach(function(detail) {
+    htmlToDisplay += "<p>" + detail + "</p>";
+  })
+
+  orderDetails.forEach(function(detail) {
+    htmlToDisplay += "<p>" + detail + "</p>";
+  })
+
+  return htmlToDisplay;
+}
+
+var completeOrder = new DisplayOrderDetails();
 
 $(document).ready(function() {
   $("form#test").submit(function(event) {
     event.preventDefault();
+
+
 
   })
 })
