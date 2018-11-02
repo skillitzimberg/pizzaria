@@ -8,8 +8,14 @@
 A pizzaria online order webpage where users can order a pizza of any size and topping combination.
 
 ### Specifications:
-##### Spec:  DO A THING:
-- [ ] ** Expect: ** beepBoop(19) === "19";
+##### Spec 1: Make a new pizza passing in toppings & size directly:
+- [x] ** Expect: ** console.log(pepperoniPizza) to return Pizza(["tomato sauce", "mozzarella", "pepperoni"], size: 14);
+
+##### Spec 2: Make Menu & Topping Objects and add pepperoni, mozzarella, and tomato sauce to menu toppings:
+- [x] ** Expect: ** console.log(menu) to return Menu {toppings: Array(1), sizeInInches: Array(3)};
+
+##### Spec 3: Make a new pizza passing in [menu.toppings[0].name, menu.toppings[1].name, menu.toppings[2].name], menu.sizeInInches[1]:
+- [ ] ** Expect: ** console.log(menu) to return Pizza {toppings: Array(3), size: 18};
 
 ## Objectives
 
