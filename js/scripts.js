@@ -15,12 +15,11 @@ Menu.prototype.addTopping = function(topping) {
 
 Menu.prototype.findTopping = function(topping) {
   for (var i = 0; i < this.toppings.length; i++) {
-    if (this.toppings[0].name === topping) {
-      console.log(i);
-      console.log(this.toppings[i].name);
+    if (this.toppings[i].name === topping.name) {
+      return topping;
     }
   }
-  // return false;
+  return false;
 }
 
 function Topping(type, name, pricing) {
