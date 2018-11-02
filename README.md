@@ -15,7 +15,10 @@ A pizzaria online order webpage where users can order a pizza of any size and to
 - [x] ** Expect: ** console.log(menu) to return Menu {toppings: Array(1), sizeInInches: Array(3)};
 
 ##### Spec 3: Make a new pizza passing in [menu.toppings[0].name, menu.toppings[1].name, menu.toppings[2].name], menu.sizeInInches[1]:
-- [ ] ** Expect: ** console.log(menu) to return Pizza {toppings: Array(3), size: 18};
+- [x] ** Expect: ** console.log(menu) to return Pizza {toppings: Array(3), size: 18};
+
+##### Spec 3: Make prototype Menu.findTopping:
+- [x] ** Expect: ** console.log(pepperoni) to return pepperoni;
 
 ## Objectives
 
