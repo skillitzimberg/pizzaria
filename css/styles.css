@@ -71,6 +71,11 @@ form {
   color: #d86767;
 }
 
+input, input[type=checkbox], select {
+  background-color: transparent;
+  border: none;
+}
+
 .customerInfo {
   margin: 0 0 1em 0;
 }
