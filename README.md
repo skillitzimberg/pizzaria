@@ -45,16 +45,16 @@ to return:
 ##### Spec 10: Format pizza toppings with customer details and price:
 - [x] ** Expect: ** var order = new DisplayOrderDetails(customer, completeOrder) to console.log <p>Scott Bergler</p><p>456235902935</p><p>tomato sauce</p><p>mozzarella</p><p>pepperoni</p><p>$15</p>;
 
-##### Spec 11: Get customer information and order from webpage:
-- [x] ** Expect: ** 
+##### Spec 11: Get customer information and order from webpage and console.log:
+- [ ] ** Expect: **
 
 ## Objectives
 
-- [ ] Allow the user to choose toppings and size for the pizza they'd like to order.
+- [x] Allow the user to choose toppings and size for the pizza they'd like to order.
 
-- [ ] Create a pizza object constructor with properties for toppings and size.
+- [x] Create a pizza object constructor with properties for toppings and size.
 
-- [ ] Create a prototype method for the cost of a pizza depending on the selections chosen. Use your own formula for this.
+- [x] Create a prototype method for the cost of a pizza depending on the selections chosen. Use your own formula for this.
 
 - [ ] Code meets standards from previous weeks.
 
@@ -71,11 +71,10 @@ to return:
 - [ ] Project demonstrates an understanding of this week's concepts. If prompted, you can discuss your code with an instructor using correct terminology.
 
 ## Setup/Installation Requirements
-To view or clone the code, go to [GitHub](https://github.com/skillitzimberg/).
-
-View the project online at [GitHub Pages](https://skillitzimberg.github.io//).
+To view or clone the code, go to [GitHub](https://github.com/skillitzimberg/pizzaria).
 
 ## Known Bugs
+There are bugs, but they are not identified yet. Something to do with the object and method used to format information for display.
 
 ## Support and contact details
 
