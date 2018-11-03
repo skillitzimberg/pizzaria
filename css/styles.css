@@ -1,14 +1,14 @@
 html, body {
   margin: 0;
   padding: 0;
-  font-size: 18px;
+  font-size: 20px;
   /* width: 100%;
   height: 100%; */
 }
 
 body {
   font-family: 'Noto Serif JP', sans-serif;
-  color: #ddd;
+  color: #BBE7FF;
 }
 
 .container {
@@ -63,7 +63,7 @@ article {
   grid-column: 4 / 10;
   grid-row: 3 / 6;
   background: rgb(0, 0, 0, 0.6);
-  height: 500px;
+  height: 550px;
   padding: 0 1em 2em;
   line-height: 1.8em;
 }

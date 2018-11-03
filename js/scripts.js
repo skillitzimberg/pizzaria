@@ -37,7 +37,7 @@ function DisplayOrderDetails(customerDetails, placeOrder) {
 }
 
 DisplayOrderDetails.prototype.formatForDisplay = function(customerDetails, placeOrder) {
-  var htmlToDisplay = "<p>" + this.customerDetails.firstName + " " + this.customerDetails.lastName + "</p>" + "<p>" + this.customerDetails.phoneNumber + "</p>";
+  var htmlToDisplay = "<h2></h2>" + "<p>" + this.customerDetails.firstName + " " + this.customerDetails.lastName + "</p>" + "<p>" + this.customerDetails.phoneNumber + "</p>";
 
   for (var i = 0; i < this.placeOrder[0].toppings.length; i++) {
     htmlToDisplay += "<p>" + this.placeOrder[0].toppings[i] + "</p>";
