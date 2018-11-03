@@ -73,6 +73,5 @@ $(document).ready(function() {
     var orderFormattedForDisplay = displayOrderDetails.formatForDisplay(customer, placeOrder);
     $("form#order").addClass("hide");
     $("#confirmOrder").html(orderFormattedForDisplay);
-
   })
 })
