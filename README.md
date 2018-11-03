@@ -46,10 +46,10 @@ to return:
 - [x] ** Expect: ** var order = new DisplayOrderDetails(customer, completeOrder) to console.log ```<p>Scott Bergler</p><p>456235902935</p><p>tomato sauce</p><p>mozzarella</p><p>pepperoni</p><p>$15</p>```;
 
 ##### Spec 11: Get customer information and order from webpage and console.log html:
-- [ ] ** Expect: ** ```<p>Scott Bergler</p><p>503-890-5118</p><p>pepperoni</p><p>pineapple</p><p>blackolives</p><p>canadianbacon</p><p>$14</p>```
+- [x] ** Expect: ** ```<p>Scott Bergler</p><p>503-890-5118</p><p>pepperoni</p><p>pineapple</p><p>blackolives</p><p>canadianbacon</p><p>$14</p>```
 
 ##### Spec 12: Get customer information and order from webpage and print to screen:
-- [ ] ** Expect: **
+- [x] ** Expect: **
 Scott Bergler
 
 503-890-5118
@@ -62,6 +62,12 @@ mozzarella
 
 $13
 
+##### Spec 13: Hide order form on submit.
+
+##### Spec 14: Display thank you & order confirmation in modal.
+
+##### Spec 15: Make checkbox labels clickable.
+
 ## Objectives
 
 - [x] Allow the user to choose toppings and size for the pizza they'd like to order.
@@ -72,23 +78,23 @@ $13
 
 - [ ] Code meets standards from previous weeks.
 
-- [ ] Constructors and prototypes are used successfully.
+- [x] Constructors and prototypes are used successfully.
 
 - [ ] Application works as expected.
 
 - [ ] Plain English specs are included in your README.
 
-- [ ] Required functionality is in place by the 5:00pm Friday deadline.
+- [nope] Required functionality is in place by the 5:00pm Friday deadline.
 
 - [ ] Project is in a polished, portfolio-quality state.
 
-- [ ] Project demonstrates an understanding of this week's concepts. If prompted, you can discuss your code with an instructor using correct terminology.
+- [x] Project demonstrates an understanding of this week's concepts. If prompted, you can discuss your code with an instructor using correct terminology.
 
 ## Setup/Installation Requirements
 To view or clone the code, go to [GitHub](https://github.com/skillitzimberg/pizzaria).
 
 ## Known Bugs
-There are bugs, but they are not identified yet. Something to do with the object and method used to format information for display.
+Ugliness
 
 ## Support and contact details
 

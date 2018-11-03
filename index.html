@@ -7,64 +7,89 @@
     <script type="text/javascript" src="js/scripts.js"></script>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/styles.css">
-    <title></title>
+    <title>AriaPizzAria</title>
   </head>
   <body>
-    <div class="container">
-      <h1></h1>
+    <div class="container index">
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+        <span class="logo"><a href="index.html">Valley Pizzaria</a></span>
+        <ul>
+          <li><a href="pizza.html">Pizza</a></li>
+          <li><a href="history.html">History</a></li>
+          <li><a href="order.html">Order</a></li>
+        </ul>
+      </nav>
       <form class="" id="order">
-        <div id="customerDetails">
-          <div class="customerInfo">
-            <label for="firstName">First Name</label>
-            <input type="text" id="firstName" placeholder="First Name">
+        <div id="customerDetails row">
+          <div class="col-md-6">
+            <div class="customerInfo">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" placeholder="First Name">
+            </div>
+            <div class="customerInfo">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" placeholder="Last Name">
+            </div>
           </div>
-          <div class="customerInfo">
-            <label for="lastName">Last Name</label>
-            <input type="text" id="lastName" placeholder="Last Name">
-          </div>
-          <div class="customerInfo">
-            <label for="phoneNumber">Phone Number</label>
-            <input type="text" id="phoneNumber" placeholder="555-555-555">
-          </div>
+          <div class="col-md-6">
+            <div class="customerInfo">
+              <div class="customerInfo">
+                <label for="phoneNumber">Email Address</label>
+                <input type="text" id="phoneNumber" placeholder="555-555-555">
+              </div>
+              <div class="customerInfo">
+                <label for="email">Phone Number</label>
+                <input type="text" id="email" placeholder="pizzaria@valley.com">
+              </div>
+            </div>
         </div>
 
-        <div class="form-group">
-          <input type="checkbox" name="toppings" id="pepperoni" value="pepperoni">
-          <label for="pepperoni">pepperoni</label>
-        </div>
-        <div class="form-group">
-          <input type="checkbox" name="toppings" id="pineapple" value="pineapple">
-          <label for="pineapple">pineapple</label>
-        </div>
-        <div class="form-group">
-          <input type="checkbox" name="toppings" id="blackolives" value="black olives">
-          <label for="blackolives">black olives</label>
-        </div>
-        <div class="form-group">
-          <input type="checkbox" name="toppings" id="canadianbacon" value="Canadian bacon">
-          <label for="canadianbacon">Canadian bacon</label>
-        </div>
-        <div class="form-group">
-          <input type="checkbox" name="toppings" id="sausage" value="sausage">
-          <label for="sausage">sausage</label>
-        </div>
-        <div class="form-group">
-          <input type="checkbox" name="toppings" id="mozzarella" value="mozzarella">
-          <label for="mozzarella">mozzarella</label>
-        </div>
-        <div class="form-group">
-          <input type="checkbox" name="toppings" id="greenpepper" value="green pepper">
-          <label for="greenpepper">green pepper</label>
-        </div>
+        <div class=row>
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="checkbox" class="toppings" name="toppings" id="pepperoni" value="pepperoni">
+              <label for="pepperoni">pepperoni</label>
+            </div>
+            <div class="form-group">
+              <input type="checkbox" class="toppings" name="toppings" id="pineapple" value="pineapple">
+              <label for="pineapple">pineapple</label>
+            </div>
+            <div class="form-group">
+              <input type="checkbox" class="toppings" name="toppings" id="blackolives" value="black olives">
+              <label for="blackolives">black olives</label>
+            </div>
+          </div>
+
+          <div class=row>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="checkbox" class="toppings" name="toppings" id="canadianbacon" value="Canadian bacon">
+                <label for="canadianbacon">Canadian bacon</label>
+              </div>
+              <div class="form-group">
+                <input type="checkbox" class="toppings" name="toppings" id="sausage" value="sausage">
+                <label for="sausage">sausage</label>
+              </div>
+              <div class="form-group">
+                <input type="checkbox" class="toppings" name="toppings" id="mozzarella" value="mozzarella">
+                <label for="mozzarella">mozzarella</label>
+              </div>
+              <div class="form-group">
+                <input type="checkbox" class="toppings" name="toppings" id="greenpepper" value="green pepper">
+                <label for="greenpepper">green pepper</label>
+              </div>
+            </div>
+          </div>
 
         <div class="form-group">
-          <label for="size">pizza size</label>
-          <select class="" id="size">
+          <label for="size" id="select">pizza size</label>
+          <select id="size">
             <option value="small">14"</option>
             <option value="medium">18"</option>
             <option value="large">22"</option>
           </select>
         </div>
+      </div>
 
         <button type="submit" class="btn btn-lg btn-success" data-toggle="modal" data-target="#orderConfirmation">Place your order</button>
       </form>
@@ -90,7 +115,6 @@
           </div>
         </div>
       </div>
-
 
     </div>
   </body>

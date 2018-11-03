@@ -70,9 +70,9 @@ $(document).ready(function() {
     var placeOrder = register.orderPizza(sizeAndToppings);
 
     var displayOrderDetails = new DisplayOrderDetails(customer, placeOrder);
-    var formattedForDisplay = displayOrderDetails.formatForDisplay(customer, placeOrder);
+    var orderFormattedForDisplay = displayOrderDetails.formatForDisplay(customer, placeOrder);
     $("form#order").addClass("hide");
-    $("#confirmOrder").html(formattedForDisplay);
+    $("#confirmOrder").html(orderFormattedForDisplay);
 
   })
 })
