@@ -47,41 +47,41 @@ a {
   text-decoration: none;
 }
 
-.button {
+#submitOrder {
   display: inline-block;
-  grid-column: 1 / 8;
+  grid-column: 5 / 8;
   border: 3px solid #ccc;
   margin-top: 1em;
   padding: 1em;
   border-radius: 5px;
-  font-size: 2vw;
+  font-size: 1em;
 }
 
 .index {
   background-image: url("../img/pizzabeer.jpeg");
 }
 
-.pizza {
-  background-image: url("../img/nightskyflour");
+.order {
+  background-image: url("../img/nightskyflour.jpeg");
 }
 
 form {
-  border: 2px solid #ddd;
   padding: 1em;
   grid-column: 4 / 10;
   grid-row: 2 / 6;
+  color: #d86767;
 }
 
 .customerInfo label {
-  display: block;
+  display: none;
 }
 
 .toppings label{
   display: inline;
 }
 
-#customerDetails {
-  margin-bottom: 20px;
+.customerDetails {
+  margin-bottom: 3em;
 }
 
 .hide {
