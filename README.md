@@ -82,11 +82,11 @@ $13
 
 - [ ] Application works as expected.
 
-- [ ] Plain English specs are included in your README.
+- [x] Plain English specs are included in your README.
 
 - [nope] Required functionality is in place by the 5:00pm Friday deadline.
 
-- [ ] Project is in a polished, portfolio-quality state.
+- [x] Project is in a polished, portfolio-quality state.
 
 - [x] Project demonstrates an understanding of this week's concepts. If prompted, you can discuss your code with an instructor using correct terminology.
 
@@ -94,7 +94,6 @@ $13
 To view or clone the code, go to [GitHub](https://github.com/skillitzimberg/pizzaria).
 
 ## Known Bugs
-Ugliness
 
 ## Support and contact details
 
