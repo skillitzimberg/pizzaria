@@ -65,39 +65,64 @@ menu.addTopping(greenPepper);
 
 
 // USER INTERFACE LOGIC
-function CustomerDetails(firstName, lastName, phoneNumber) {
+function Customer(firstName, lastName, phoneNumber) {
   this.firstName = firstName,
   this.lastName = lastName,
   this.phoneNumber = phoneNumber
 }
 
-CustomerDetails.prototype.addCustomer = function(firstName, lastName, phoneNumber) {
+Customer.prototype.addCustomer = function(firstName, lastName, phoneNumber) {
   return [firstName, lastName, phoneNumber];
 }
 
 function DisplayOrderDetails(customerDetails, completeOrder) {
-  var htmlToDisplay = "<p>" + customerDetails.firstName + " " + customerDetails.lastName + "</p>" + "<p>" + customerDetails.phoneNumber + "</p>";
+  this.customerDetails = customerDetails,
+  this.completeOrder = completeOrder
+}
 
-  for (var i = 0; i < completeOrder[0].toppings.length; i++) {
-    htmlToDisplay += "<p>" + completeOrder[0].toppings[i] + "</p>";
-    console.log(completeOrder[0].toppings[i]);
+DisplayOrderDetails.prototype.formatForDisplay = function(customerDetails, completeOrder) {
+  debugger;
+  var htmlToDisplay = "<p>" + this.firstName + " " + this.lastName + "</p>" + "<p>" + this.phoneNumber + "</p>";
+
+  for (var i = 0; i < this.completeOrder[0].toppings.length; i++) {
+    htmlToDisplay += "<p>" + this.completeOrder[0].toppings[i] + "</p>";
+    console.log(this.completeOrder[0].toppings[i]);
   };
 
-  htmlToDisplay += "<p>$" + completeOrder[1] + "</p>";
+  htmlToDisplay += "<p>$" + this.completeOrder[1] + "</p>";
+  console.log(htmlToDisplay);
   return htmlToDisplay;
 }
 
 $(document).ready(function() {
   $("form#order").submit(function(event) {
     event.preventDefault();
+    var firstName = $("input#firstName").val();
+    console.log(firstName);
+    var lastName = $("input#lastName").val();
+    console.log(lastName);
+    var phoneNumber = $("input#phoneNumber").val();
+    console.log(phoneNumber);
+    var customer = new Customer(firstName, lastName, phoneNumber);
+    // customer.addCustomer(firstName, lastName, phoneNumber);
+    console.log(customer);
+
     var pizzaToppings = [];
+    var size = $("select#size").val();
+    var orderDetails = [];
     $("input:checkbox[name=toppings]:checked").each(function(){
       pizzaToppings.push($(this).val());
     });
-    var size = $("#size").val();
-    var orderDetails = [];
     orderDetails.push(pizzaToppings);
     orderDetails.push(size);
-    console.log(orderDetails);
+
+    var completeOrder = menu.orderPizza(orderDetails);
+    console.log(completeOrder);
+
+    var displayOrderDetails = new DisplayOrderDetails();
+    displayOrderDetails.formatForDisplay(customer, completeOrder);
+    console.log(displayOrderDetails);
+    $("#confirmOrder").html(displayOrderDetails);
+
   })
 })

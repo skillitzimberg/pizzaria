@@ -13,21 +13,36 @@
     <div class="container">
       <h1></h1>
       <form class="" id="order">
+        <div id="customerDetails">
+          <div class="customerInfo">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" placeholder="First Name">
+          </div>
+          <div class="customerInfo">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" placeholder="Last Name">
+          </div>
+          <div class="customerInfo">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="text" id="phoneNumber" placeholder="555-555-555">
+          </div>
+        </div>
+
         <div class="form-group">
           <input type="checkbox" name="toppings" value="pepperoni">
-          <label for="">pepperoni</label>
+          <label for="pepperoni">pepperoni</label>
         </div>
         <div class="form-group">
           <input type="checkbox" name="toppings" value="pineapple">
-          <label for="">pineapple</label>
+          <label for="pineapple">pineapple</label>
         </div>
         <div class="form-group">
           <input type="checkbox" name="toppings" value="blackolives">
-          <label for="">black olives</label>
+          <label for="blackolives">black olives</label>
         </div>
         <div class="form-group">
           <input type="checkbox" name="toppings" value="canadianbacon">
-          <label for="">Canadian bacon</label>
+          <label for="canadianbacon">Canadian bacon</label>
         </div>
         <div class="form-group">
           <input type="checkbox" name="toppings" value="mozzarella">
@@ -35,11 +50,11 @@
         </div>
         <div class="form-group">
           <input type="checkbox" name="toppings" value="greenpepper">
-          <label for="">green pepper</label>
+          <label for="mozzarella">green pepper</label>
         </div>
 
         <div class="form-group">
-          <label for="">pizza size</label>
+          <label for="size">pizza size</label>
           <select class="" id="size">
             <option value="small">14"</option>
             <option value="medium">18"</option>
