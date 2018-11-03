@@ -1,50 +1,51 @@
 // BUSINESS LOGIC
-function Pizza(toppings, size) {
-  this.toppings = toppings,
-  this.size = size
+function Pizza(size, toppings) {
+  this.size = size,
+  this.toppings = toppings
 }
 
-function Menu() {
-  this.toppings = ["pepperoni", "mozzarella", "tomatosauce", "pineapple", "blackOlives", "canadianBacon", "greenPepper", "sausage"],
+function Register() {
   this.basePricePerSize = [["small", 10], ["medium", 12], ["large", 16]]
-
+  this.toppings = [
+    "pepperoni", "sausage", "canadianBacon",
+    "pineapple", "blackOlives",  "greenPepper",
+    "mozzarella", "tomatosauce"
+  ]
 }
 
-Menu.prototype.addTopping = function(topping) {
+// Methods Not In Use But Potentially Useful In A Refactor:
+Register.prototype.addTopping = function(topping) {
   this.toppings.push(topping);
 }
-
-Menu.prototype.findTopping = function(topping) {
+Register.prototype.findTopping = function(topping) {
   for (var i = 0; i < this.toppings.length; i++) {
-    if (this.toppings[i].name === topping.name) {
+    if (this.toppings[i] === topping) {
       return topping;
     }
   }
   return false;
 }
-
 function Topping(type, name, pricing) {
   this.type = type,
   this.name = name,
   this.pricing = pricing
 }
+// *****
 
-Menu.prototype.getPizzaPrice = function(orderDetails) {
-    for (var i = 0; i < this.basePricePerSize.length; i++) {
-      if (this.basePricePerSize[i][0] === orderDetails[1]) {
-        var sizeBasePrice = this.basePricePerSize[i][1];
-      }
+Register.prototype.getPizzaPrice = function(sizeAndToppings) {
+  for (var i = 0; i < this.basePricePerSize.length; i++) {
+    if (this.basePricePerSize[i][0] === sizeAndToppings[0]) {
+      var sizeBasePrice = this.basePricePerSize[i][1];
     }
-    return orderTotal = orderDetails[0].length + sizeBasePrice;
+  }
+  return orderTotal = sizeAndToppings[0].length + sizeBasePrice;
 }
 
-Menu.prototype.orderPizza = function(orderDetails) {
-  var hotPizza = new Pizza(orderDetails[0], orderDetails[1]);
-  var orderTotal = this.getPizzaPrice(orderDetails);
+Register.prototype.orderPizza = function(sizeAndToppings) {
+  var hotPizza = new Pizza(sizeAndToppings[0], sizeAndToppings[1]);
+  var orderTotal = this.getPizzaPrice(sizeAndToppings);
   return [hotPizza, orderTotal];
 }
-
-var menu = new Menu();
 
 
 // USER INTERFACE LOGIC
@@ -54,24 +55,20 @@ function Customer(firstName, lastName, phoneNumber) {
   this.phoneNumber = phoneNumber
 }
 
-Customer.prototype.addCustomer = function(firstName, lastName, phoneNumber) {
-  return [firstName, lastName, phoneNumber];
-}
-
-function DisplayOrderDetails(customerDetails, completeOrder) {
+function DisplayOrderDetails(customerDetails, placeOrder) {
   this.customerDetails = customerDetails,
-  this.completeOrder = completeOrder
+  this.placeOrder = placeOrder
 }
 
-DisplayOrderDetails.prototype.formatForDisplay = function(customerDetails, completeOrder) {
+DisplayOrderDetails.prototype.formatForDisplay = function(customerDetails, placeOrder) {
 
   var htmlToDisplay = "<p>" + this.customerDetails.firstName + " " + this.customerDetails.lastName + "</p>" + "<p>" + this.customerDetails.phoneNumber + "</p>";
 
-  for (var i = 0; i < this.completeOrder[0].toppings.length; i++) {
-    htmlToDisplay += "<p>" + this.completeOrder[0].toppings[i] + "</p>";
+  for (var i = 0; i < this.placeOrder[0].toppings.length; i++) {
+    htmlToDisplay += "<p>" + this.placeOrder[0].toppings[i] + "</p>";
   };
 
-  htmlToDisplay += "<p>$" + this.completeOrder[1] + "</p>";
+  htmlToDisplay += "<p>$" + this.placeOrder[1] + "</p>";
   return htmlToDisplay;
 }
 
@@ -80,24 +77,26 @@ var displayOrderDetails = new DisplayOrderDetails();
 $(document).ready(function() {
   $("form#order").submit(function(event) {
     event.preventDefault();
+
     var firstName = $("input#firstName").val();
     var lastName = $("input#lastName").val();
     var phoneNumber = $("input#phoneNumber").val();
     var customer = new Customer(firstName, lastName, phoneNumber);
 
+    var pizzaSize = $("select#size").val();
     var pizzaToppings = [];
-    var size = $("select#size").val();
-    var orderDetails = [];
-    $("input:checkbox[name=toppings]:checked").each(function(){
+    $("input:checkbox[name=toppings]:checked").each(function() {
       pizzaToppings.push($(this).val());
     });
-    orderDetails.push(pizzaToppings);
-    orderDetails.push(size);
+    var sizeAndToppings = [];
+    sizeAndToppings.push(pizzaSize);
+    sizeAndToppings.push(pizzaToppings);
 
-    var completeOrder = menu.orderPizza(orderDetails);
+    var register = new Register();
+    var placeOrder = register.orderPizza(sizeAndToppings);
 
-    var displayOrderDetails = new DisplayOrderDetails(customer, completeOrder);
-    var formattedDisplay = displayOrderDetails.formatForDisplay(customer, completeOrder);
+    var displayOrderDetails = new DisplayOrderDetails(customer, placeOrder);
+    var formattedDisplay = displayOrderDetails.formatForDisplay(customer, placeOrder);
     console.log(formattedDisplay);
     $("#confirmOrder").html(formattedDisplay);
 
