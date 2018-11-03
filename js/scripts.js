@@ -37,7 +37,6 @@ function DisplayOrderDetails(customerDetails, placeOrder) {
 }
 
 DisplayOrderDetails.prototype.formatForDisplay = function(customerDetails, placeOrder) {
-
   var htmlToDisplay = "<p>" + this.customerDetails.firstName + " " + this.customerDetails.lastName + "</p>" + "<p>" + this.customerDetails.phoneNumber + "</p>";
 
   for (var i = 0; i < this.placeOrder[0].toppings.length; i++) {
@@ -47,8 +46,6 @@ DisplayOrderDetails.prototype.formatForDisplay = function(customerDetails, place
   htmlToDisplay += "<p>$" + this.placeOrder[1] + "</p>";
   return htmlToDisplay;
 }
-
-var displayOrderDetails = new DisplayOrderDetails();
 
 $(document).ready(function() {
   $("form#order").submit(function(event) {
