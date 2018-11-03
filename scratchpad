@@ -67,9 +67,12 @@ pepperoni.pricing
 var orderDetails = [["tomato sauce", "mozzarella", "pepperoni"], "medium"];
 var completeOrder = menu.orderPizza(orderDetails);
 var customer = new Customer("Scott", "Bergler", "456235902935");
+customer.addCustomer("Scott", "Bergler", "456235902935")
 var order = new DisplayOrderDetails(customer, completeOrder);
+order.formatForDisplay(customer, completeOrder);
 
 
+customer.addCustomer("Scott", "Bergler", "456235902935")
 
 var htmlToDisplay = "<p>" + customerDetails.firstName + " " +  customerDetails.lastName + "</p>" + "<p>" + customerDetails.phoneNumber + "</p>";
 
@@ -94,3 +97,21 @@ completeOrder[0].toppings.forEach(function(city)
 var orderDetails = [];
 orderDetails.push(pizzaToppings);
 console.log(orderDetails);
+
+
+// var pepperoni = new Topping("meat", "pepperoni", [0.5, 0.75, 1]);
+// var mozzarella = new Topping("cheese", "mozzarella", [0.5, 0.75, 1]);
+// var tomatosauce = new Topping("sauce", "tomato sauce", [0.5, 0.75, 1]);
+// var pineapple = new Topping("veggie", "pineapple", [0.5, 0.75, 1]);
+// var blackOlives = new Topping("veggie", "black olives", [0.5, 0.75, 1]);
+// var canadianBacon = new Topping("meat", "Canadian bacon", [0.5, 0.75, 1]);
+// var greenPepper = new Topping("veggie", "green pepper", [0.5, 0.75, 1]);
+//
+//
+// menu.addTopping(pepperoni);
+// menu.addTopping(mozzarella);
+// menu.addTopping(tomatosauce);
+// menu.addTopping(pineapple);
+// menu.addTopping(blackOlives);
+// menu.addTopping(canadianBacon);
+// menu.addTopping(greenPepper);

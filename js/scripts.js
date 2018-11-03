@@ -5,8 +5,9 @@ function Pizza(toppings, size) {
 }
 
 function Menu() {
-  this.toppings = [],
+  this.toppings = ["pepperoni", "mozzarella", "tomatosauce", "pineapple", "blackOlives", "canadianBacon", "greenPepper", "sausage"],
   this.basePricePerSize = [["small", 10], ["medium", 12], ["large", 16]]
+
 }
 
 Menu.prototype.addTopping = function(topping) {
@@ -34,34 +35,16 @@ Menu.prototype.getPizzaPrice = function(orderDetails) {
         var sizeBasePrice = this.basePricePerSize[i][1];
       }
     }
-  return orderTotal = orderDetails[0].length + sizeBasePrice;
+    return orderTotal = orderDetails[0].length + sizeBasePrice;
 }
 
 Menu.prototype.orderPizza = function(orderDetails) {
   var hotPizza = new Pizza(orderDetails[0], orderDetails[1]);
   var orderTotal = this.getPizzaPrice(orderDetails);
-
   return [hotPizza, orderTotal];
 }
 
 var menu = new Menu();
-
-var pepperoni = new Topping("meat", "pepperoni", [0.5, 0.75, 1]);
-var mozzarella = new Topping("cheese", "mozzarella", [0.5, 0.75, 1]);
-var tomatosauce = new Topping("sauce", "tomato sauce", [0.5, 0.75, 1]);
-var pineapple = new Topping("veggie", "pineapple", [0.5, 0.75, 1]);
-var blackOlives = new Topping("veggie", "black olives", [0.5, 0.75, 1]);
-var canadianBacon = new Topping("meat", "Canadian bacon", [0.5, 0.75, 1]);
-var greenPepper = new Topping("veggie", "green pepper", [0.5, 0.75, 1]);
-
-
-menu.addTopping(pepperoni);
-menu.addTopping(mozzarella);
-menu.addTopping(tomatosauce);
-menu.addTopping(pineapple);
-menu.addTopping(blackOlives);
-menu.addTopping(canadianBacon);
-menu.addTopping(greenPepper);
 
 
 // USER INTERFACE LOGIC
@@ -81,31 +64,26 @@ function DisplayOrderDetails(customerDetails, completeOrder) {
 }
 
 DisplayOrderDetails.prototype.formatForDisplay = function(customerDetails, completeOrder) {
-  debugger;
-  var htmlToDisplay = "<p>" + this.firstName + " " + this.lastName + "</p>" + "<p>" + this.phoneNumber + "</p>";
+
+  var htmlToDisplay = "<p>" + this.customerDetails.firstName + " " + this.customerDetails.lastName + "</p>" + "<p>" + this.customerDetails.phoneNumber + "</p>";
 
   for (var i = 0; i < this.completeOrder[0].toppings.length; i++) {
     htmlToDisplay += "<p>" + this.completeOrder[0].toppings[i] + "</p>";
-    console.log(this.completeOrder[0].toppings[i]);
   };
 
   htmlToDisplay += "<p>$" + this.completeOrder[1] + "</p>";
-  console.log(htmlToDisplay);
   return htmlToDisplay;
 }
+
+var displayOrderDetails = new DisplayOrderDetails();
 
 $(document).ready(function() {
   $("form#order").submit(function(event) {
     event.preventDefault();
     var firstName = $("input#firstName").val();
-    console.log(firstName);
     var lastName = $("input#lastName").val();
-    console.log(lastName);
     var phoneNumber = $("input#phoneNumber").val();
-    console.log(phoneNumber);
     var customer = new Customer(firstName, lastName, phoneNumber);
-    // customer.addCustomer(firstName, lastName, phoneNumber);
-    console.log(customer);
 
     var pizzaToppings = [];
     var size = $("select#size").val();
@@ -117,12 +95,11 @@ $(document).ready(function() {
     orderDetails.push(size);
 
     var completeOrder = menu.orderPizza(orderDetails);
-    console.log(completeOrder);
 
-    var displayOrderDetails = new DisplayOrderDetails();
-    displayOrderDetails.formatForDisplay(customer, completeOrder);
-    console.log(displayOrderDetails);
-    $("#confirmOrder").html(displayOrderDetails);
+    var displayOrderDetails = new DisplayOrderDetails(customer, completeOrder);
+    var formattedDisplay = displayOrderDetails.formatForDisplay(customer, completeOrder);
+    console.log(formattedDisplay);
+    $("#confirmOrder").html(formattedDisplay);
 
   })
 })

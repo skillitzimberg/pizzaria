@@ -45,8 +45,22 @@ to return:
 ##### Spec 10: Format pizza toppings with customer details and price:
 - [x] ** Expect: ** var order = new DisplayOrderDetails(customer, completeOrder) to console.log <p>Scott Bergler</p><p>456235902935</p><p>tomato sauce</p><p>mozzarella</p><p>pepperoni</p><p>$15</p>;
 
-##### Spec 11: Get customer information and order from webpage and console.log:
+##### Spec 11: Get customer information and order from webpage and console.log html:
+- [ ] ** Expect: ** <p>Scott Bergler</p><p>503-890-5118</p><p>pepperoni</p><p>pineapple</p><p>blackolives</p><p>canadianbacon</p><p>$14</p>
+
+##### Spec 12: Get customer information and order from webpage and print to screen:
 - [ ] ** Expect: **
+Scott Bergler
+
+503-890-5118
+
+pineapple
+
+canadianbacon
+
+mozzarella
+
+$13
 
 ## Objectives
 
