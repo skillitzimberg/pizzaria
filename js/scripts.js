@@ -5,32 +5,8 @@ function Pizza(size, toppings) {
 }
 
 function Register() {
-  this.basePricePerSize = [["small", 10], ["medium", 12], ["large", 16]]
-  this.toppings = [
-    "pepperoni", "sausage", "canadianBacon",
-    "pineapple", "blackOlives",  "greenPepper",
-    "mozzarella", "tomatosauce"
-  ]
+  this.basePricePerSize = [["small", 12], ["medium", 14], ["large", 18]]
 }
-
-// Methods Not In Use But Potentially Useful In A Refactor:
-Register.prototype.addTopping = function(topping) {
-  this.toppings.push(topping);
-}
-Register.prototype.findTopping = function(topping) {
-  for (var i = 0; i < this.toppings.length; i++) {
-    if (this.toppings[i] === topping) {
-      return topping;
-    }
-  }
-  return false;
-}
-function Topping(type, name, pricing) {
-  this.type = type,
-  this.name = name,
-  this.pricing = pricing
-}
-// *****
 
 Register.prototype.getPizzaPrice = function(sizeAndToppings) {
   for (var i = 0; i < this.basePricePerSize.length; i++) {
@@ -38,7 +14,7 @@ Register.prototype.getPizzaPrice = function(sizeAndToppings) {
       var sizeBasePrice = this.basePricePerSize[i][1];
     }
   }
-  return orderTotal = sizeAndToppings[0].length + sizeBasePrice;
+  return orderTotal = sizeAndToppings[1].length + sizeBasePrice;
 }
 
 Register.prototype.orderPizza = function(sizeAndToppings) {
@@ -88,6 +64,7 @@ $(document).ready(function() {
     $("input:checkbox[name=toppings]:checked").each(function() {
       pizzaToppings.push($(this).val());
     });
+
     var sizeAndToppings = [];
     sizeAndToppings.push(pizzaSize);
     sizeAndToppings.push(pizzaToppings);
@@ -96,9 +73,9 @@ $(document).ready(function() {
     var placeOrder = register.orderPizza(sizeAndToppings);
 
     var displayOrderDetails = new DisplayOrderDetails(customer, placeOrder);
-    var formattedDisplay = displayOrderDetails.formatForDisplay(customer, placeOrder);
-    console.log(formattedDisplay);
-    $("#confirmOrder").html(formattedDisplay);
+    var formattedForDisplay = displayOrderDetails.formatForDisplay(customer, placeOrder);
+    $("form#order").addClass("hide");
+    $("#confirmOrder").html(formattedForDisplay);
 
   })
 })
