@@ -8,7 +8,7 @@ html, body {
 
 body {
   font-family: 'Noto Serif JP', sans-serif;
-  color: #BBE7FF;
+  color: #bbe7FF;
 }
 
 .container {
@@ -42,10 +42,19 @@ li {
   list-style: none;
 }
 
-a {
-  color: #ccc;
+span a {
+  color: #ccf8FF;
   text-decoration: none;
 }
+
+a {
+  color: #d86767;
+  text-decoration: none;
+}
+
+/* a#menuColor {
+  color: #d86767;
+} */
 
 .index {
   background-image: url("../img/pizzabeer.jpeg");
@@ -68,7 +77,14 @@ article {
   line-height: 1.8em;
 }
 
-article h1, h2 {
+nav span {
+}
+
+.navbar-inverse {
+    background: rgb(0, 0, 0, 0.75);
+}
+
+h1, h2 {
   text-align: center;
   color: #d86767;
 }
@@ -83,6 +99,12 @@ form {
 input, input[type=checkbox], select {
   background-color: transparent;
   border: none;
+}
+
+input::placeholder {
+  color: #ccf8FF;
+  font-size: 1.2em;
+  font-style: italic;
 }
 
 .customerInfo {
