@@ -99,6 +99,9 @@ orderDetails.push(pizzaToppings);
 console.log(orderDetails);
 
 
+
+
+
 // var pepperoni = new Topping("meat", "pepperoni", [0.5, 0.75, 1]);
 // var mozzarella = new Topping("cheese", "mozzarella", [0.5, 0.75, 1]);
 // var tomatosauce = new Topping("sauce", "tomato sauce", [0.5, 0.75, 1]);
@@ -115,3 +118,32 @@ console.log(orderDetails);
 // menu.addTopping(blackOlives);
 // menu.addTopping(canadianBacon);
 // menu.addTopping(greenPepper);
+
+
+Thank You For Your Order! Here are your order details. Give us about 30 minutes to get your pie perfect. It'll be hot and ready to go when you get here.
+
+Scott Bergler
+
+Toppings:
+pepperoni
+pineapple
+black olives
+tomato
+Canadian bacon
+sausage
+mozzarella
+green pepper
+
+Pizza Price:
+
+Order Total:
+
+$22
+
+var customer = new Customer("Scott", "Bergler", "874509768");
+
+var register = new Register();
+    var thisIsAPizza = register.orderPizza("small", ["pepperoni"]);
+    console.log(thisIsAPizza);
+var displayOrderDetails = new DisplayOrderDetails(customer, thisIsAPizza);
+var orderFormattedForDisplay = displayOrderDetails.formatForDisplay();
