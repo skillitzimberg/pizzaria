@@ -147,3 +147,7 @@ var register = new Register();
     console.log(thisIsAPizza);
 var displayOrderDetails = new DisplayOrderDetails(customer, thisIsAPizza);
 var orderFormattedForDisplay = displayOrderDetails.formatForDisplay();
+
+$(".modal").on("hidden.bs.modal", function () {
+    window.location = "your-url";
+});

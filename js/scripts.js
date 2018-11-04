@@ -75,4 +75,7 @@ $(document).ready(function() {
     $("form#order").addClass("hide");
     $("#confirmOrder").html(orderFormattedForDisplay);
   })
+  $(".modal").on("hidden.bs.modal", function () {
+      window.location = "order.html";
+  });
 })
