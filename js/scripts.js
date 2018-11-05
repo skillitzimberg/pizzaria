@@ -99,6 +99,7 @@ $(document).ready(function() {
     $("form#order").addClass("hide");
     $("#confirmOrder").html(orderFormattedForDisplay);
   })
+  // This modal handler is from Knaģis (https://stackoverflow.com/users/1711598/kna%C4%A3is)  :: https://stackoverflow.com/questions/20580978/open-url-on-bootstrap-modal-close
   $(".modal").on("hidden.bs.modal", function () {
       window.location = "order.html";
   });
