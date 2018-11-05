@@ -50,19 +50,18 @@ OrderDetails.prototype.addCustomerToOrder = function(customerDetails) {
 }
 
 OrderDetails.prototype.formatForDisplay = function() {
-  var htmlToDisplay = "<p>" + this.customerDetails.firstName + " " + this.customerDetails.lastName + "</p>" +  "<h4>Toppings:</h4>";
-
-
+  var htmlToDisplay = "<p>" + this.customerDetails.firstName + " " + this.customerDetails.lastName + "</p>" +  "<h4>Your pizza(s):</h4>";
+  var orderTotal = 0;
+  console.log(orderTotal);
   for (var i = 0; i < this.allPizzasOnOrder.length; i++) {
     var size = this.allPizzasOnOrder[i].size;
     var toppings = this.allPizzasOnOrder[i].toppings;
-    toppings.forEach(function() {
-      console.log(toppings);
-      htmlToDisplay += "<p>" + toppings[i] + "</p>";
-    })
-  //
-  //   htmlToDisplay += "<h4>Size: " + this.pizzaOrdered.size + "</h4>" + "<h4>Price: $" + this.pizzaOrdered.price + "</h4>"
+    var price = this.allPizzasOnOrder[i].price;
+
+    orderTotal += price;
+    htmlToDisplay += "<p>" + size + ": " + toppings + "</p>";
   }
+  htmlToDisplay += "<h4>Total: $" + orderTotal + "</h4>"
   return htmlToDisplay;
 }
 
