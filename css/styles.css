@@ -140,7 +140,7 @@ input#howMany::placeholder {
   font-size: 1em;
 }
 
-#orderConfirmation {
+.modal-content {
   color: #d86767;
   background: rgb(0, 0, 0, 0.6);
 }
