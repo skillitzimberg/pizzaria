@@ -86,13 +86,20 @@
         </div>
 
         <div class="form-group">
-          <label for="size" id="select">pizza size</label>
+          <label for="size">pizza size</label>
           <select id="size">
             <option value="small">14"</option>
             <option value="medium">18"</option>
             <option value="large">22"</option>
           </select>
         </div>
+
+        <div class="form-group">
+          <label for="howMany">How Many?</label>
+          <input type="number" id="howMany" min=1 placeholder="1" value=1>
+        </div>
+
+        <input type="text" class="btn btn-md btn-primary" id="addToOrder" value="Add To Order">
 
         <button type="submit" class="btn btn-lg btn-success" id="submitOrder" data-toggle="modal" data-target="#orderConfirmation">Place your order</button>
       </form>
@@ -109,7 +116,7 @@
             </div>
             <div class="modal-body">
               <div id="confirmOrder">
-                
+
               </div>
             </div>
             <div class="modal-footer">

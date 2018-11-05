@@ -104,6 +104,16 @@ input::placeholder {
   font-style: italic;
 }
 
+input#howMany {
+  width: 50px;
+  margin-left: 10px;
+}
+
+input#howMany::placeholder {
+  color: #d86767;
+  font-style: normal;
+}
+
 .customerInfo {
   margin: 0 0 1em 0;
 }
@@ -121,7 +131,7 @@ input::placeholder {
 }
 
 #submitOrder {
-  display: inline-block;
+  display: block;
   grid-column: 5 / 8;
   border: 3px solid #ccc;
   margin-top: 1em;
