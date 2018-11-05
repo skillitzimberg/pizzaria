@@ -96,7 +96,7 @@ To view or clone the code, go to [GitHub](https://github.com/skillitzimberg/pizz
 The page is live at: [GitHub](https://skillitzimberg.github.io/pizzaria).
 
 ## Known Bugs
-
+It does not check for order validity - it will place and charge for an order if the user hits the Add To Order button without checking topping options. Basically, you can order by mistake.
 ## Support and contact details
 
 Scott Bergler :: commandinghands@gmail.com
