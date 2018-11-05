@@ -24,8 +24,6 @@ Register.prototype.makeAPizza = function(size, toppings) {
   return hotPizza;
 }
 
-
-// USER INTERFACE LOGIC
 function Customer(firstName, lastName, phoneNumber, email) {
   this.firstName = firstName,
   this.lastName = lastName,
@@ -42,7 +40,6 @@ OrderDetails.prototype.addPizzaToOrder = function(hotPizza, numberOfPizzasOfThis
   for (var i = 1; i <= numberOfPizzasOfThisType; i++) {
     this.allPizzasOnOrder.push(hotPizza);
   }
-  console.log(this.allPizzasOnOrder);
 }
 
 OrderDetails.prototype.addCustomerToOrder = function(customerDetails) {
@@ -50,9 +47,13 @@ OrderDetails.prototype.addCustomerToOrder = function(customerDetails) {
 }
 
 OrderDetails.prototype.formatForDisplay = function() {
-  var htmlToDisplay = "<p>" + this.customerDetails.firstName + " " + this.customerDetails.lastName + "</p>" +  "<h4>Your pizza(s):</h4>";
+  var htmlToDisplay =
+  "<p>" + this.customerDetails.firstName
+  + " " + this.customerDetails.lastName
+  + "</p>" + "<h4>Your pizza(s):</h4>";
+
   var orderTotal = 0;
-  console.log(orderTotal);
+
   for (var i = 0; i < this.allPizzasOnOrder.length; i++) {
     var size = this.allPizzasOnOrder[i].size;
     var toppings = this.allPizzasOnOrder[i].toppings;
@@ -65,6 +66,8 @@ OrderDetails.prototype.formatForDisplay = function() {
   return htmlToDisplay;
 }
 
+
+// USER INTERFACE LOGIC
 $(document).ready(function() {
   var register = new Register();
   var orderDetails = new OrderDetails();
@@ -76,17 +79,9 @@ $(document).ready(function() {
       pizzaToppings.push($(this).val());
     });
     var numberOfPizzasOfThisType = $("input#howMany").val();
-
     var thisIsAPizza = register.makeAPizza(pizzaSize, pizzaToppings);
+
     orderDetails.addPizzaToOrder(thisIsAPizza, numberOfPizzasOfThisType);
-
-    console.log(pizzaSize);
-    console.log(pizzaToppings);
-    console.log(register);
-    console.log(thisIsAPizza);
-    console.log(numberOfPizzasOfThisType);
-    console.log(orderDetails);
-
     $(".toppings").prop("checked", false);
   })
 
@@ -99,7 +94,6 @@ $(document).ready(function() {
     var email = $("input#email").val();
     var customer = new Customer(firstName, lastName, phoneNumber, email);
     orderDetails.addCustomerToOrder(customer);
-    console.log(orderDetails);
 
     var orderFormattedForDisplay = orderDetails.formatForDisplay();
     $("form#order").addClass("hide");
